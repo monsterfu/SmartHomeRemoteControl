@@ -13,6 +13,8 @@
 		6407C7A9196A50990088A171 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6407C7A8196A50990088A171 /* LeftViewController.m */; };
 		6407C7AD196A51A50088A171 /* leftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6407C7AC196A51A50088A171 /* leftTableViewCell.m */; };
 		6407C7B2196A52420088A171 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6407C7B1196A52420088A171 /* MainViewController.m */; };
+		6407C7CC196A93860088A171 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6407C7CB196A93860088A171 /* GCDAsyncSocket.m */; };
+		6407C7D6196AA3F50088A171 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6407C7D5196AA3F50088A171 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		640D3EEE19655A7300632D47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640D3EED19655A7300632D47 /* Foundation.framework */; };
 		640D3EF019655A7300632D47 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640D3EEF19655A7300632D47 /* CoreGraphics.framework */; };
 		640D3EF219655A7300632D47 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 640D3EF119655A7300632D47 /* UIKit.framework */; };
@@ -55,6 +57,10 @@
 		6407C7B7196A696B0088A171 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		6407C7B8196A696B0088A171 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		6407C7B9196A696B0088A171 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6407C7CA196A93860088A171 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		6407C7CB196A93860088A171 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		6407C7D4196AA3F50088A171 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		6407C7D5196AA3F50088A171 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		640D3EEA19655A7300632D47 /* SmartHomeRemoteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomeRemoteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		640D3EED19655A7300632D47 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		640D3EEF19655A7300632D47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +104,7 @@
 		6407C797196A4CC00088A171 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6407C7C7196A8DD70088A171 /* communication */,
 				6407C7A6196A505D0088A171 /* LeftViewController */,
 				6407C7A5196A4DD50088A171 /* MainViewController */,
 				6407C798196A4CCD0088A171 /* PKRevealController */,
@@ -159,6 +166,26 @@
 				6407C7AC196A51A50088A171 /* leftTableViewCell.m */,
 			);
 			name = leftTableViewCell;
+			sourceTree = "<group>";
+		};
+		6407C7C7196A8DD70088A171 /* communication */ = {
+			isa = PBXGroup;
+			children = (
+				6407C7C9196A93860088A171 /* GCDAsyncSocket */,
+			);
+			name = communication;
+			sourceTree = "<group>";
+		};
+		6407C7C9196A93860088A171 /* GCDAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				6407C7D4196AA3F50088A171 /* AsyncUdpSocket.h */,
+				6407C7D5196AA3F50088A171 /* AsyncUdpSocket.m */,
+				6407C7CA196A93860088A171 /* GCDAsyncSocket.h */,
+				6407C7CB196A93860088A171 /* GCDAsyncSocket.m */,
+			);
+			name = GCDAsyncSocket;
+			path = communication/GCDAsyncSocket;
 			sourceTree = "<group>";
 		};
 		640D3EE119655A7200632D47 = {
@@ -334,11 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6407C7A9196A50990088A171 /* LeftViewController.m in Sources */,
+				6407C7D6196AA3F50088A171 /* AsyncUdpSocket.m in Sources */,
 				6407C79F196A4D240088A171 /* PKRevealController.m in Sources */,
 				6407C7AD196A51A50088A171 /* leftTableViewCell.m in Sources */,
 				6407C7B2196A52420088A171 /* MainViewController.m in Sources */,
 				6407C7A0196A4D240088A171 /* PKRevealControllerContainerView.m in Sources */,
 				640D3EFE19655A7300632D47 /* AppDelegate.m in Sources */,
+				6407C7CC196A93860088A171 /* GCDAsyncSocket.m in Sources */,
 				6407C7A1196A4D240088A171 /* UIViewController+PKRevealController.m in Sources */,
 				640D3EFA19655A7300632D47 /* main.m in Sources */,
 			);

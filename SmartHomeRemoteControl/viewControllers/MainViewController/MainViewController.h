@@ -7,16 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "common.h"
+
 
 @protocol MainViewControllerDelegate <NSObject>
 -(void)showLeftViewController;
 @end
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<GCDAsyncSocketDelegate>
 
 @property(nonatomic, assign)id<MainViewControllerDelegate>delegate;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 - (IBAction)testButtonTouch:(UIButton *)sender;
 
 @end

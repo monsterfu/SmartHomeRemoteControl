@@ -1,13 +1,13 @@
 //
-//  ViewController.h
+//  leftTableViewCell.h
 //  SmartHomeRemoteControl
 //
-//  Created by Monster on 14-7-3.
+//  Created by Monster on 14-7-7.
 //  Copyright (c) 2014年 Monster. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface leftTableViewCell : UITableViewCell
 
 @end

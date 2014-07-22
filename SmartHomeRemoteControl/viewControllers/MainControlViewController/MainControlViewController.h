@@ -16,6 +16,9 @@
     NSMutableArray* _nameArray;
     UIBarButtonItem* _addButton;
 }
+
+- (IBAction)addButtonTouch:(UIBarButtonItem *)sender;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong, readwrite) PKRevealController *revealController;
 @end

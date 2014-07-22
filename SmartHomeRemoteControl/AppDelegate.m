@@ -19,6 +19,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];    
     UINavigationController *mainControlNavigationContoller = [storyboard instantiateViewControllerWithIdentifier:@"MainControlIdentifer"];
     // Step 4: Set it as your root view controller.
+    [mainControlNavigationContoller.navigationBar setBackgroundImage:[UIImage imageNamed:@"img_02.png"] forBarMetrics:UIBarMetricsDefault];
     self.window.rootViewController = mainControlNavigationContoller;
     [self.window makeKeyAndVisible];
     

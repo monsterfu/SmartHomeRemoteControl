@@ -31,11 +31,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UIImage* addImg = [UIImage imageNamed:@"img (4)"];
-    _addButton = [[UIBarButtonItem alloc]initWithImage:addImg style:UIBarButtonItemStylePlain target:self action:@selector(addButtonPressed)];
-    self.navigationItem.rightBarButtonItem = _addButton;
-    
+//    
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"img (24)"] forBarMetrics:UIBarMetricsDefault];
     
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
@@ -60,11 +57,6 @@
     // Pass the selected object to the new view controller.
 }
 */
--(void)addButtonPressed
-{
-    [self performSegueWithIdentifier:@"addRoomIdentifier" sender:nil];
-}
-
 #pragma mark - UICollectionViewDelegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -104,5 +96,8 @@
     mainViewController.delegate = _revealController;
     
     [self presentViewController:_revealController animated:YES completion:nil];
+}
+- (IBAction)addButtonTouch:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"addRoomIdentifier" sender:nil];
 }
 @end

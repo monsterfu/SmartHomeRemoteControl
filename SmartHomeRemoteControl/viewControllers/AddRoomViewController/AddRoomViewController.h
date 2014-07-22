@@ -20,4 +20,10 @@
     NSMutableArray* _typeNameArray;
 }
 @property (weak, nonatomic) IBOutlet SKSTableView *tableView;
+
+- (IBAction)cancelButtonTouch:(UIBarButtonItem *)sender;
+
+- (IBAction)okButtonTouch:(UIBarButtonItem *)sender;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
+
 @end

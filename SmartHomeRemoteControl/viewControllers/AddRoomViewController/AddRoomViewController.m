@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view.
     _tableView.SKSTableViewDelegate = self;
     _tableView.shouldExpandOnlyOneCell = YES;
-    
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"img_02.png"] forBarMetrics:UIBarMetricsDefault];
     //去掉TABLEVIEW 多余分割线
     UIView *view =[ [UIView alloc]init];
     view.backgroundColor = [UIColor clearColor];
@@ -133,4 +133,12 @@
     }
 }
 
+- (IBAction)cancelButtonTouch:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)okButtonTouch:(UIBarButtonItem *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

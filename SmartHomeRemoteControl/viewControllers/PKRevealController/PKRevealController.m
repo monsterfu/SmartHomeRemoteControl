@@ -1501,8 +1501,8 @@ NS_INLINE void safelyExecuteCompletionBlockOnMainThread(PKDefaultCompletionHandl
 }
 #pragma mark - delegate
 
--(void)showLeftViewController
+-(void)leftTopButtonTouch
 {
-    [self showViewController:self.leftViewController];
+    [self dismissModalViewControllerAnimated:YES];
 }
 @end

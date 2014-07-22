@@ -11,7 +11,7 @@
 
 
 @protocol MainViewControllerDelegate <NSObject>
--(void)showLeftViewController;
+-(void)leftTopButtonTouch;
 @end
 
 @interface MainViewController : UIViewController<GCDAsyncSocketDelegate>

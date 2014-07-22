@@ -7,9 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
-#import "LeftViewController.h"
-#import "PKRevealController.h"
+#import "MainControlViewController.h"
 
 @implementation AppDelegate
 
@@ -18,27 +16,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    MainViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainIdentifier"];
-    LeftViewController *leftViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftIdentifier"];
-    UINavigationController *frontViewController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    
-    // Step 2: Configure an options dictionary for the PKRevealController if necessary - in most cases the default behaviour should suffice. See PKRevealController.h for more option keys.
-    /*
-     NSDictionary *options = @{
-     PKRevealControllerAllowsOverdrawKey : [NSNumber numberWithBool:YES],
-     PKRevealControllerDisablesFrontViewInteractionKey : [NSNumber numberWithBool:YES]
-     };
-     */
-    
-    // Step 3: Instantiate your PKRevealController.
-    self.revealController = [PKRevealController revealControllerWithFrontViewController:frontViewController
-                                                                     leftViewController:leftViewController
-                                                                    rightViewController:nil
-                                                                                options:nil];
-    mainViewController.delegate = _revealController;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];    
+    UINavigationController *mainControlNavigationContoller = [storyboard instantiateViewControllerWithIdentifier:@"MainControlIdentifer"];
     // Step 4: Set it as your root view controller.
-    self.window.rootViewController = self.revealController;
+    self.window.rootViewController = mainControlNavigationContoller;
     [self.window makeKeyAndVisible];
     
     return YES;

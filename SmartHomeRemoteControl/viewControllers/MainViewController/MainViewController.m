@@ -109,8 +109,8 @@
 
 -(void)leftButtonTouched
 {
-    if (self.delegate&&[self.delegate respondsToSelector:@selector(showLeftViewController)]) {
-        [self.delegate showLeftViewController];
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(leftTopButtonTouch)]) {
+        [self.delegate leftTopButtonTouch];
     }
 }
 @end
